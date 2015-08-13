@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,16 +54,20 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+
+  resources :events
+
+
    get "welcome/say_hello" => "welcome#say" 
    get "welcome" => "welcome#index"
 
-   resources :groups
-
-
+   # resources :groups
 
 
   root :to => "welcome#index"
 
-  match ':controller(/:action(/:id(.:format)))', :via => :all
 
+  # link_to event.name, event_path(event)  ???????
+  # match ':controller(/:action(/:id(.:format)))', :via => :all
 end

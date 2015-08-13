@@ -2,6 +2,11 @@ class EventsController < ApplicationController
 	# Event.all會抓出所有的資料，回傳一個陣列給實例變數(instance variables)指派給@events
 	def index
 		@events = Event.all
+		# 上述的程式用Event.all一次抓出所有活動，
+		# 這在資料量一大的時候非常浪費效能和記憶體。
+		# 通常會用分頁機制來限制抓取資料的筆數。
+		@events = Event.page(params[:page]).per(10)
+
 	end
 
 	# 透過before_action，我們可以將Controller中重複的程式獨立出來。
@@ -20,7 +25,7 @@ class EventsController < ApplicationController
 
   		# 驗證錯誤並顯示錯誤訊息
   		if @event.save
-		    redirect_to :action => :index
+		    redirect_to events_url
 		else
 		    render :action => :new
 		end
@@ -45,7 +50,7 @@ class EventsController < ApplicationController
 	  @event.update(event_params)
 	  # 驗證錯誤並顯示錯誤訊息
 		if @event.save
-		    redirect_to :action => :index
+		    redirect_to events_url(@event)
 		else
 		    render :action => :new
 		end
@@ -56,10 +61,9 @@ class EventsController < ApplicationController
 		# @event = Event.find(params[:id])
 		@event.destroy
 
-		redirect_to :action => :index
+		redirect_to events_url
 		flash[:alert] = "event was successfully deleted"
 	end
-
 
 
 

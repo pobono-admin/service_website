@@ -13,6 +13,14 @@
 		<div class="container-fluid">
 			<%= render "welcome/navbar" %>
 		</div>
+
+		<!-- Adding Authentication with Devise -->
+		<% if notice %>
+		  <p class="alert alert-success"><%= notice %></p>
+		<% end %>
+		<% if alert %>
+		  <p class="alert alert-danger"><%= alert %></p>
+		<% end %>
 		
 		<!-- Ｆlash的功能 -->
 		<p style="color: green"><%= flash[:notice] %></p>
