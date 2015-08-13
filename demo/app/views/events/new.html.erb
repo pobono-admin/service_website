@@ -1,0 +1,13 @@
+<%= form_for @event, :url => { :controller => 'events', :action => 'create' } do |f| %>
+<!--     <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :description, "Description" %>
+    <%= f.text_area :description %> -->
+
+<!-- 以＿form.html.erb這個局部樣板取代重複指令 -->
+<%= render :partial => 'form', :locals => { :f => f } %>
+
+
+    <%= f.submit "Create" %>
+<% end %>
