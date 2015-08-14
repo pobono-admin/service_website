@@ -4,12 +4,19 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  	<div><%= f.label :name %><br />
-        <%= f.text_field :name, autofocus: true %></div>
 
-   	<%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true %>
-    <%= f.input :password_confirmation, required: true %>
+<!--   <p class= "col-sm-10 col-sm-offset-2" >Name</p>
+ -->  <div class= "col-sm-4 col-sm-offset-2"> <%= f.input :name, autofocus: true %></div>
+  
+<!--   <p class= "col-sm-10 col-sm-offset-2" >Email</p> 
+ -->  <div class= "col-sm-4 col-sm-offset-2">  	<%= f.input :email, required: true, autofocus: true %></div>
+
+  <div class= "col-sm-4 col-sm-offset-2">   <%= f.input :password, required: true %></div>
+
+
+  <div class= "col-sm-4 col-sm-offset-2">   <%= f.input :password_confirmation, required: true %></div>
+
+  
   </div>
 
   <div class="form-actions">
