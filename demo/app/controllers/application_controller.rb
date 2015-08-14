@@ -5,4 +5,24 @@ class ApplicationController < ActionController::Base
 
   # log in, need to log in before view any page
   # before_action :authenticate_user!   
+
+
+
+  # device 
+  # This is because the way Rails 4 deals with "mass assignment." 
+  # Due to security reasons we have to explicitly permit parameters inside each controller. 
+  # That also concerns the controllers build in the Devise. 
+  # We won't be customizing them now, instead we will follow
+  # guidelines provided by Devise team and add permissions to application controller:
+
+	before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    protected
+
+        def configure_permitted_parameters
+            devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
+            devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth) }
+        end
+
+
 end
