@@ -16,9 +16,11 @@ class EventsController < ApplicationController
 	def new
 		@event = Event.new  
 		# 網址變成 /new.html
+		# Event 這個table 的資料由@event這個變數來輸入
 	end
 	def create
-		@event = Event.new(event_params)  #params[:event]
+		# @event = current_user.event.find(event_params)
+		 @event = Event.new(event_params)  #params[:event]
 		# Rails 4 is different. Here is reason: http://stackoverflow.com/questions/17371334/how-is-attr-accessible-used-in-rails-4
 		# @event.save
   		#redirect_to :action => :index
@@ -42,12 +44,14 @@ class EventsController < ApplicationController
 	end
 		# 同理
 	def edit
-  		# @event = Event.find(params[:id])
+  		@event = Event.find(params[:id])
+  		# @event = current_user.find(params[:id])
 	end
 
 	def update
-	  # @event = Event.find(params[:id])
+	  @event = Event.find(params[:id])
 	  @event.update(event_params)
+	  # @event = current_user.event.find(params[:id])
 	  # 驗證錯誤並顯示錯誤訊息
 		if @event.save
 		    redirect_to events_url(@event)
@@ -58,8 +62,9 @@ class EventsController < ApplicationController
 	end
 
 	def destroy
-		# @event = Event.find(params[:id])
+		@event = Event.find(params[:id])
 		@event.destroy
+		# @event = current_user.event.find(params[:id])
 
 		redirect_to events_url
 		flash[:alert] = "event was successfully deleted"

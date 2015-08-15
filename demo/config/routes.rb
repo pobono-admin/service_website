@@ -57,15 +57,23 @@ Rails.application.routes.draw do
 
 
   resources :events
+  resources :users
+
+  root :to => "welcome#index"
+
+  get "welcome/say_hello" => "welcome#say" 
+  get "welcome" => "welcome#index"
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'signup'  => 'users#new'
 
 
-   get "welcome/say_hello" => "welcome#say" 
-   get "welcome" => "welcome#index"
 
    # resources :groups
 
 
-  root :to => "welcome#index"
+  
 
 
   # link_to event.name, event_path(event)  ???????
