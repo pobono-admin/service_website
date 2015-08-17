@@ -1,13 +1,14 @@
+
 <h2>Register</h2>
 <div class="row">
 	<div class="col-md-6 col-md-offset-3">
 
 		<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-		<%= render 'shared/error_messages' %>
-		<!--<%= f.error_notification %>-->
+<!-- 		<%= render 'shared/error_messages' %>
+ --><!--<%= f.error_notification %>-->
 		<!--  f.input :name, autofocus: true  -->
 		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control' %>
+		<%= f.text_field :name, required: true, class: 'form-control' %>
 
  		<%= f.input :email, required: true, autofocus: true %> 
 
@@ -17,3 +18,7 @@
 		<% end %>
 	</div>
 </div>
+
+
+<input type="text" ng-model="hello" class="form-control" />
+{{hello || "Please type something"}}

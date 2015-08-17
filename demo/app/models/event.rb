@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
 	# 
-	validates_presence_of :name
+	# validates_presence_of :name
 	# 名字必填
 
 	# <% if event.editable_by?(current_user) %>
@@ -10,7 +10,7 @@ class Event < ActiveRecord::Base
 
  # validates :title, presence: true
  
-  has_many :user
+  # has_many :user
 # 設定 user 跟 event 之間的資料庫關聯 ( database relationship )
- belongs_to :owner, class_name: "User", foreign_key: :user_id
+ # belongs_to :owner, class_name: "User", foreign_key: :user_id
 end
