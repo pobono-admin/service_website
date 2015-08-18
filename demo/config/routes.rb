@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  devise_for :users
+  get 'users/new'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -55,19 +56,16 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  get "welcome/say_hello" => "welcome#say"
+  get "welcome" => "welcome#index"
 
-  resources :events
+  resources :users  
+  get 'help'    => 'static_pages#help'
+  get 'about'   => 'static_pages#about'
+  get 'contact' => 'static_pages#contact'
+  get 'signup'  => 'users#new'
 
-
-   get "welcome/say_hello" => "welcome#say" 
-   get "welcome" => "welcome#index"
-
-   # resources :groups
 
 
   root :to => "welcome#index"
-
-
-  # link_to event.name, event_path(event)  ???????
-  # match ':controller(/:action(/:id(.:format)))', :via => :all
 end
