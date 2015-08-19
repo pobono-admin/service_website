@@ -1,5 +1,5 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
+<div class = "col-sm-12 text-center"><h1>登入</h1></div>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -11,9 +11,9 @@
       <%= f.label :password %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.submit "Log in", class: "btn btn-primary" %>
+      <%= f.submit "歡迎登入", class: "btn btn-primary form-control" %>
     <% end %>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+    <p>還不是會員嗎？<%= link_to "建立帳號", signup_path %></p>
   </div>
 </div>
