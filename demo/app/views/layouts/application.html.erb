@@ -6,24 +6,17 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 		<script type="text/javascript">
 // create angular app
-    var validationApp = angular.module('validationApp', []);
+	var validationApp = angular.module('validationApp', []);
 
-    // create angular controller
-    validationApp.controller('mainController', function($scope) {
+	// create angular controller
+	validationApp.controller('mainController', function($scope) {
+	});
 
-        // function to submit the form after all validation has occurred            
-        $scope.submitForm = function() {
-
-            // check to make sure the form is completely valid
-            if ($scope.userForm.$valid) {
-                alert('our form is amazing');
-            }
-
-        };
-
-    });
 		</script>
-		<title><%= @page_title || "Event application" %></title>
+
+
+
+		<title><%= @page_title || "Andrew's Page" %></title>
 		<!-- 修改標籤上的字眼 -->
 		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>

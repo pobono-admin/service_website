@@ -4,3 +4,7 @@
 	// create angular controller
 	validationApp.controller('mainController', function($scope) {
 	});
+
+	function mainController($scope) {
+		$scope.name = "Anna";
+	}
