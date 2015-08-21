@@ -1,10 +1,13 @@
 // create angular app
-	var validationApp = angular.module('validationApp', []);
+	angular.module('validationApp', []);
 
 	// create angular controller
-	validationApp.controller('mainController', function($scope) {
+	angular.module('validationApp').controller('mainController', function($scope) {
+
+		$scope.message = "告訴我們你的名字吧！";
+
 	});
 
-	function mainController($scope) {
-		$scope.name = "Anna";
-	}
+	// function mainController($scope) {
+	// 	$scope.name = "Anna";
+	// }
