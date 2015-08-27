@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       log_in @user  #sing up then log in directly
-    	flash[:success] = "註冊成功"
+    	flash[:success] = "Sign up success!!"
     	redirect_to user_url(@user)
       # Handle a successful save.
     else
