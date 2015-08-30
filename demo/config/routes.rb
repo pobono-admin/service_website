@@ -57,8 +57,9 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
-  get "welcome/say_hello" => "welcome#say"
   get "welcome" => "welcome#index"
+  get "welcome/say_hello" => "welcome#say"
+  get "welcome/aboutme" => "welcome#about"
 
 
   resources :users  
