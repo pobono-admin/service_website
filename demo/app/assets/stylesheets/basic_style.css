@@ -1,7 +1,7 @@
 .footer_style{
 	margin-top: 50px;
 	background-color: #4F5E7F;
-	position: absolute;
+	position: relative !important;
 	bottom: 0px;
 	margin: auto;
 	width: 100% !important;
@@ -13,7 +13,9 @@
 }
 
 .header_style{
-	margin-bottom: 50px;
+	position: fixed;
+	z-index: 9999999999999;
+	top: 0px;
 	background-color: #4F5E7F;
 	width: 100% !important;
 
@@ -25,4 +27,38 @@
 .header_style li:hover a,
 .header_style a:hover{
 	color: #FF7070;
+}
+
+.page_title{
+	margin-top: 60px;
+	margin-bottom: 30px;
+}
+
+
+
+.cv_title{
+	border-bottom: 1px solid #d1d1d1;
+	margin-top: 30px;
+}
+
+.cv_sub_title{
+	color: red;
+}
+
+.cv_sub_title_a{
+	color: #000;
+}
+
+.cv_sub_title_note{
+	color: #000;
+}
+
+.cv_sub_title_date{
+font-style: italic;
+	color: #acacac;	
+}
+
+
+.cv_sub_title ~ p{
+	margin-left: 30px;
 }
